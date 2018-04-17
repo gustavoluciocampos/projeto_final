@@ -7,9 +7,9 @@ Gustavo Campos
 
 ### Histórico do assunto
 
-Medir a popularidade de uma notícia, post, tweet, etc é um dos desafios que enfrentamos hoje. Diversos estudos são feitos para tentar entender como é a propagação e a aceitação de notícias na internet.
+Medir a popularidade de uma notícia, post, tweet, etc é um dos grandes desafios que enfrentamos hoje. Diversos estudos são feitos nesse sentido para tentar entender como é a propagação e a aceitação de notícias na internet.
 
-Entender quais formas ou quais caracteríscas devem ter uma notícia para ser mais popular pode empoderar os jornais e portais as redes sociais para terem um alcance cada vez maior.
+Entender quais formas ou quais caracteríscas devem ter uma notícia para ser mais popular pode empoderar os jornais, portais e redes sociais para terem um alcance cada vez maior.
 
 Vou usar esse trabalho como o start para eu começar a estudar a popularidade de forma geral, de vídeos, notícias, notícias fakes e etc.Para tentar entender o que faz por exemplo um vídeo, um texto, um post, etc, com um objetivo de conversão converter ou não.
 
@@ -18,7 +18,6 @@ Vou usar esse trabalho como o start para eu começar a estudar a popularidade de
 o projeto é baseado em dados coletados do site de notícias [Mashable](https://mashable.com/) e o dataset resume um conjunto heterogêneo de features sobre noticias publicadas por um período de dois anos. O objetivo principal desse projeto é prever a quantidade de compartilhamentos **(popularidade)** das notícias.
 
 ### Conjuntos de dados e entradas
-_(aprox. 2-3 parágrafos)_
 
 Esse projeto está disponível no site do [Kaggle](https://www.kaggle.com/c/predicting-online-news-popularity) em forma de competição. Alêm disso foi disponibilizado o data set pelo site da [UCI(Repositório de dataset para machine learning)](https://archive.ics.uci.edu/ml/datasets/Online+News+Popularity).
 
