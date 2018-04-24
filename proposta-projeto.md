@@ -17,6 +17,15 @@ Vou usar esse trabalho como o start para eu começar a estudar a popularidade de
 
 o projeto é baseado em dados coletados do site de notícias [Mashable](https://mashable.com/) e o dataset resume um conjunto heterogêneo de features sobre noticias publicadas por um período de dois anos. O objetivo principal desse projeto é prever a quantidade de compartilhamentos **(popularidade)** das notícias.
 
+Três aspectos são importantes de ser mencionados na descrição do problema:
+
+-   Os dados de entrada para solução do problema estão estruturados em um dataset com 61 features diferentes, todas elas descritas abaixo na seção de conjunto de dados.
+
+-   A saída esperada é uma classe dentre as classes alvos modeladas.
+
+-   A tarefa da aprendizagem é um modelo de classificação multi-classes.
+
+
 ### Conjuntos de dados e entradas
 
 Esse projeto está disponível no site do [Kaggle](https://www.kaggle.com/c/predicting-online-news-popularity) em forma de competição. Alêm disso foi disponibilizado o data set pelo site da [UCI(Repositório de dataset para machine learning)](https://archive.ics.uci.edu/ml/datasets/Online+News+Popularity).
@@ -25,6 +34,7 @@ Esse projeto está disponível no site do [Kaggle](https://www.kaggle.com/c/pred
 Informações sobre Atributos:
 
 Número de Atributos: 61 (58 atributos preditivos, 2 não preditivos, 1 campo de meta) 
+Número de linhas: 39644
 
 Informação do Atributo: 
 
@@ -101,18 +111,14 @@ Algun desafios que são inerentes a medidas de popularidade e entendimento de ac
 
 ### Descrição da solução
 
-O objetivo desse projeto é criar um modelo de classificação para predizer a popularidade de uma notícia, para esse experimento utilizaremos os dados do dataset para criar um classificador e após a classificação tentar predizer qual seria a popularidade da notícias (quantidade de compartilhamentos).
+O objetivo desse projeto é criar um modelo de classificação para predizer a popularidade de uma notícia, para esse experimento utilizaremos os dados do dataset para criar um classificador e predizer de acordo com a classificação se uma noticia é popular ou não.
 
 
 ### Modelo de referência (benchmark)
 
-A idéia de ter um modelo treinado utilizando o dataset é fornecer um classficador com capacidade de predizer a popularidade de uma nova noticia com uma boa precisão, sendo assim é razoável dizer que o modelo treinado pelo dataset teria uma melhor performance que uma geração de compartilhamento(popularidade) aleatório.
-
-Uma outra forma de ter um modelo de referência para validar o modelo treinado é treinar uma regressão para a quantidade de compartilhamentos com o dataset não trabalhado, após treinado retirar uma métrica de R2 para medir o quanto o modelo treinado consegue se ajustar a amostra.
+A idéia de ter um modelo treinado utilizando o dataset é fornecer um classficador com capacidade de predizer a popularidade de uma nova noticia com uma boa precisão, sendo assim é razoável dizer que o modelo treinado pelo dataset teria uma melhor performance que uma geração de compartilhamento(popularidade) aleatório. Vou utilizar o DummyClassifier da biblioteca sklearn para geração de uma classificação de benchmark.
 
 ### Métricas de avaliação
-
-Para verificar o desempenho da regressão utilizarei  métrica de R2, que siginifica a variância do modelo, em outras palavras o quanto o modelo treinado no dados de treino consegue ser ajustado nos dados de teste.
 
 Para verificar os classificadores vou utilizar as métricas da Matriz de Confusão: 
 
@@ -129,11 +135,11 @@ Verificar e tentar enteder a distribuição dos dados pelas features que possuem
 
 Tentar entender a interação entre as diversas categorias/features presentes no dataset, entender o corelacionamento e caso seja possível extrair as componentes principais do dataset.
 
-Entender quais a features mais relavantas e retirar features que não são relevantes para o rótulo, para evitar o overfeating.
+Entender quais a features mais relavantas e retirar features que não são relevantes para o rótulo, para evitar o overfeating. Para extrair a importância das features vou utilizar a biblioteca do sklearn para calcular o Mean Decrease Impurity (MDI) através de um modelo de árove de decisão.
 
 Em uma segunda etapa a idéia é tentar entender se existem possíveis segmentações entre a distribuição de popularidade:
 
-Crias novas colunas com um level(baixo / medio / alto) de popularidade, e uma nova coluna com binária dizendo se é popular ou não de acordo com a média de compartilhamentos.
+Criar novas colunas com um level(baixo / medio / alto) de popularidade, e uma nova coluna com binária dizendo se é popular ou não de acordo com a média de compartilhamentos, essas colunas serão os rótulos/target para os modelos de machine learning.
 
 Em uma próxima etapa vou separar os dados em dados de treinamento e dados de teste, utilizando a biblioteca do python sklearn.cross_validation.
 
@@ -150,4 +156,4 @@ K. Fernandes, P. Vinagre and P. Cortez. A Proactive Intelligent Decision Support
 https://mineracaodedados.wordpress.com/tag/matriz-de-confusao/
 
 
-
+http://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyClassifier.html
