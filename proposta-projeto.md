@@ -139,7 +139,7 @@ Entender quais a features mais relavantas e retirar features que não são relev
 
 Em uma segunda etapa a idéia é tentar entender se existem possíveis segmentações entre a distribuição de popularidade:
 
-Criar novas colunas com um level(baixo / medio / alto) de popularidade, e uma nova coluna com binária dizendo se é popular ou não de acordo com a média de compartilhamentos, essas colunas serão os rótulos/target para os modelos de machine learning.
+Criar uma nova colunam binária dizendo se é popular ou não de acordo com a média de compartilhamentos, essa coluna será o rótulo/target para os modelos de machine learning.
 
 Em uma próxima etapa vou separar os dados em dados de treinamento e dados de teste, utilizando a biblioteca do python sklearn.cross_validation.
 
